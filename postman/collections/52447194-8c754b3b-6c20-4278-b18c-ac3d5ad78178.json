@@ -228,6 +228,48 @@
 						"description": "Fetches a specific post by its ID (in this case, post #1). Notice how the ID is part of the URL path. This demonstrates how to retrieve a single resource from an API."
 					},
 					"response": []
+				},
+				{
+					"name": "Get single post Copy 3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d8fa4f84-46b0-4ea8-95b7-cb05439d4568",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"id": "52447194-7cb3a381-8d82-4f4c-9214-827272eaa243",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts/500",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts",
+								"500"
+							]
+						},
+						"description": "Fetches a specific post by its ID (in this case, post #1). Notice how the ID is part of the URL path. This demonstrates how to retrieve a single resource from an API."
+					},
+					"response": []
 				}
 			],
 			"id": "52447194-0c20f746-0903-478f-8a05-ec4271ee1e1b",
