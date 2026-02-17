@@ -189,6 +189,22 @@
 				},
 				{
 					"name": "Get single post Copy 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d8fa4f84-46b0-4ea8-95b7-cb05439d4568",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"id": "52447194-dfb908a4-db96-4585-9db8-a9e7b941ea28",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -197,7 +213,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://jsonplaceholder.typicode.com/posts/1",
+							"raw": "https://jsonplaceholder.typicode.com/posts/500",
 							"protocol": "https",
 							"host": [
 								"jsonplaceholder",
@@ -206,7 +222,7 @@
 							],
 							"path": [
 								"posts",
-								"1"
+								"500"
 							]
 						},
 						"description": "Fetches a specific post by its ID (in this case, post #1). Notice how the ID is part of the URL path. This demonstrates how to retrieve a single resource from an API."
