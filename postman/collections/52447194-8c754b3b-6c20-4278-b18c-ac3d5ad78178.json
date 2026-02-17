@@ -246,13 +246,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/posts/500",
+							"raw": "{{baseUrl}}/posts/501",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"posts",
-								"500"
+								"501"
 							]
 						},
 						"description": "Fetches a specific post by its ID (in this case, post #1). Notice how the ID is part of the URL path. This demonstrates how to retrieve a single resource from an API."
