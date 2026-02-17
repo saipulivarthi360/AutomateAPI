@@ -52,6 +52,48 @@
 					"response": []
 				},
 				{
+					"name": "Get all posts Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response is an array\", function () {",
+									"    pm.expect(pm.response.json()).to.be.an('array');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "52447194-0a94af11-7a1f-422b-a6a0-0387edd072fc",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts"
+							]
+						},
+						"description": "Fetches all posts from the API. This is a simple GET request that retrieves a list of all available posts. GET requests are used to read data without modifying anything on the server."
+					},
+					"response": []
+				},
+				{
 					"name": "Get single post",
 					"id": "52447194-822875e6-d5fc-427e-885e-0166e7117329",
 					"protocolProfileBehavior": {
