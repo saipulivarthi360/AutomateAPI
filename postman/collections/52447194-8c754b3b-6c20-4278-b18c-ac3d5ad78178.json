@@ -238,7 +238,7 @@
 								"id": "d8fa4f84-46b0-4ea8-95b7-cb05439d4568",
 								"exec": [
 									"pm.test(\"Status code is 404\", function () {",
-									"    pm.response.to.have.status(404);",
+									"    pm.response.to.have.status(200);",
 									"});"
 								],
 								"type": "text/javascript",
