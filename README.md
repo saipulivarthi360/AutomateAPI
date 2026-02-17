@@ -91,3 +91,11 @@ We utilize the SCM Polling method to bridge the local Jenkins server with GitHub
     EBADENGINE: Solved by removing default Ubuntu Node.js and installing v22.x via Nodesource.
 
     Dependency Issues: Solved using sudo apt-get install -f to catch the net-tools requirement.
+
+🌐 Environment Switching
+
+This project supports multi-environment testing. Environment variables are stored in .postman_environment.json files.
+
+    To run manually: Select the environment from the Jenkins "Build with Parameters" menu.
+
+    Variable syntax: All requests must use {{baseUrl}} to remain compatible with environment switching.
