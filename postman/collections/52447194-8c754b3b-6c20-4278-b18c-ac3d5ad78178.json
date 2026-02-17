@@ -272,6 +272,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "e7ed818a-6ce3-4df0-8983-a170bce55b4d",
 								"exec": [
 									"pm.test(\"Status code is 201\", function () {",
 									"    pm.response.to.have.status(201);",
@@ -282,7 +283,9 @@
 									"    pm.expect(jsonData).to.have.property('id');",
 									"});"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
@@ -303,12 +306,9 @@
 							"raw": "{\n  \"title\": \"My New Post\",\n  \"body\": \"This is the content of my new post. POST requests are used to create new resources.\",\n  \"userId\": 1\n}"
 						},
 						"url": {
-							"raw": "https://jsonplaceholder.typicode.com/posts",
-							"protocol": "https",
+							"raw": "{{baseUrl}}/posts",
 							"host": [
-								"jsonplaceholder",
-								"typicode",
-								"com"
+								"{{baseUrl}}"
 							],
 							"path": [
 								"posts"
@@ -337,12 +337,9 @@
 							"raw": "{\n  \"id\": 1,\n  \"title\": \"Updated Post Title\",\n  \"body\": \"This is the updated content. PUT requests are used to update existing resources.\",\n  \"userId\": 1\n}"
 						},
 						"url": {
-							"raw": "https://jsonplaceholder.typicode.com/posts/1",
-							"protocol": "https",
+							"raw": "{{baseUrl}}/posts/1",
 							"host": [
-								"jsonplaceholder",
-								"typicode",
-								"com"
+								"{{baseUrl}}"
 							],
 							"path": [
 								"posts",
@@ -363,12 +360,9 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://jsonplaceholder.typicode.com/posts/1",
-							"protocol": "https",
+							"raw": "{{baseUrl}}/posts/1",
 							"host": [
-								"jsonplaceholder",
-								"typicode",
-								"com"
+								"{{baseUrl}}"
 							],
 							"path": [
 								"posts",
