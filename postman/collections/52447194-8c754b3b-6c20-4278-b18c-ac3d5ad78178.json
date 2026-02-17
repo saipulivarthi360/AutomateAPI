@@ -1,0 +1,205 @@
+{
+	"info": {
+		"_postman_id": "52447194-8c754b3b-6c20-4278-b18c-ac3d5ad78178",
+		"name": "Demo Collection - Getting Started",
+		"description": "A beginner-friendly collection showcasing key Postman features using the JSONPlaceholder API. Learn how to make different types of HTTP requests, organize them into folders, and write basic tests.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Read Operations",
+			"item": [
+				{
+					"name": "Get all posts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response is an array\", function () {",
+									"    pm.expect(pm.response.json()).to.be.an('array');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "52447194-cc7667e7-2574-4fa4-b24b-4cb0cdaa0568",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts"
+							]
+						},
+						"description": "Fetches all posts from the API. This is a simple GET request that retrieves a list of all available posts. GET requests are used to read data without modifying anything on the server."
+					},
+					"response": []
+				},
+				{
+					"name": "Get single post",
+					"id": "52447194-822875e6-d5fc-427e-885e-0166e7117329",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts/1",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts",
+								"1"
+							]
+						},
+						"description": "Fetches a specific post by its ID (in this case, post #1). Notice how the ID is part of the URL path. This demonstrates how to retrieve a single resource from an API."
+					},
+					"response": []
+				}
+			],
+			"id": "52447194-0c20f746-0903-478f-8a05-ec4271ee1e1b",
+			"description": "This folder contains GET requests that read data from the API without making any changes. These are safe operations that can be repeated without side effects."
+		},
+		{
+			"name": "Write Operations",
+			"item": [
+				{
+					"name": "Create new post",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});",
+									"",
+									"pm.test(\"Response has id property\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.property('id');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "52447194-d889f3b0-dfee-4c70-9072-9f704b77bda7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"My New Post\",\n  \"body\": \"This is the content of my new post. POST requests are used to create new resources.\",\n  \"userId\": 1\n}"
+						},
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts"
+							]
+						},
+						"description": "Creates a new post by sending JSON data in the request body. POST requests are used to create new resources on the server. Notice the Content-Type header and the JSON body with title, body, and userId fields."
+					},
+					"response": []
+				},
+				{
+					"name": "Update post",
+					"id": "52447194-01f5dde9-27ae-4348-a1ee-afd9c72d43ff",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 1,\n  \"title\": \"Updated Post Title\",\n  \"body\": \"This is the updated content. PUT requests are used to update existing resources.\",\n  \"userId\": 1\n}"
+						},
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts/1",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts",
+								"1"
+							]
+						},
+						"description": "Updates an existing post (post #1) by sending the complete updated data. PUT requests replace the entire resource with the new data you provide. Notice we include the ID in both the URL and the body."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete post",
+					"id": "52447194-5917134f-8de6-4cb2-8c2d-073853302975",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts/1",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts",
+								"1"
+							]
+						},
+						"description": "Deletes a specific post (post #1). DELETE requests remove resources from the server. This is a destructive operation, though in this demo API, nothing is actually deleted permanently."
+					},
+					"response": []
+				}
+			],
+			"id": "52447194-7976e3b1-c334-4b15-9690-6ede9b751102",
+			"description": "This folder contains requests that modify data on the server - creating, updating, and deleting resources. These operations change the state of the API."
+		}
+	]
+}
