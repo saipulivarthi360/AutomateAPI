@@ -1,0 +1,247 @@
+{
+	"info": {
+		"_postman_id": "a1811438-41b0-403c-8baa-3296b84448c3",
+		"name": "QA collection 2",
+		"description": "A beginner-friendly collection showcasing key Postman features using the JSONPlaceholder API. Learn how to make different types of HTTP requests, organize them into folders, and write basic tests.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "52447194",
+		"_collection_link": "https://pskc360-4143798.postman.co/workspace/b3299796-4c0d-4ff5-85fa-144702341985/collection/52447194-a1811438-41b0-403c-8baa-3296b84448c3?action=share&source=collection_link&creator=52447194"
+	},
+	"item": [
+		{
+			"name": "Read Operations",
+			"item": [
+				{
+					"name": "Get all posts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response is an array\", function () {",
+									"    pm.expect(pm.response.json()).to.be.an('array');",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/posts",
+						"description": "Fetches all posts from the API. This is a simple GET request that retrieves a list of all available posts. GET requests are used to read data without modifying anything on the server."
+					},
+					"response": []
+				},
+				{
+					"name": "Get all posts Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response is an array\", function () {",
+									"    pm.expect(pm.response.json()).to.be.an('array');",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/posts",
+						"description": "Fetches all posts from the API. This is a simple GET request that retrieves a list of all available posts. GET requests are used to read data without modifying anything on the server."
+					},
+					"response": []
+				},
+				{
+					"name": "Get all posts Copy 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response is an array\", function () {",
+									"    pm.expect(pm.response.json()).to.be.an('array');",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/posts",
+						"description": "Fetches all posts from the API. This is a simple GET request that retrieves a list of all available posts. GET requests are used to read data without modifying anything on the server."
+					},
+					"response": []
+				},
+				{
+					"name": "Get single post",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/posts/1",
+						"description": "Fetches a specific post by its ID (in this case, post #1). Notice how the ID is part of the URL path. This demonstrates how to retrieve a single resource from an API."
+					},
+					"response": []
+				},
+				{
+					"name": "Get single post Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/posts/1",
+						"description": "Fetches a specific post by its ID (in this case, post #1). Notice how the ID is part of the URL path. This demonstrates how to retrieve a single resource from an API."
+					},
+					"response": []
+				},
+				{
+					"name": "Get single post Copy 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {",
+									"    pm.response.to.have.status(404);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/posts/500",
+						"description": "Fetches a specific post by its ID (in this case, post #1). Notice how the ID is part of the URL path. This demonstrates how to retrieve a single resource from an API."
+					},
+					"response": []
+				},
+				{
+					"name": "Get single post Copy 3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {",
+									"    pm.response.to.have.status(404);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/posts/500",
+						"description": "Fetches a specific post by its ID (in this case, post #1). Notice how the ID is part of the URL path. This demonstrates how to retrieve a single resource from an API."
+					},
+					"response": []
+				}
+			],
+			"description": "This folder contains GET requests that read data from the API without making any changes. These are safe operations that can be repeated without side effects."
+		},
+		{
+			"name": "Write Operations",
+			"item": [
+				{
+					"name": "Create new post",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});",
+									"",
+									"pm.test(\"Response has id property\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.property('id');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"My New Post\",\n  \"body\": \"This is the content of my new post. POST requests are used to create new resources.\",\n  \"userId\": 1\n}"
+						},
+						"url": "https://jsonplaceholder.typicode.com/posts",
+						"description": "Creates a new post by sending JSON data in the request body. POST requests are used to create new resources on the server. Notice the Content-Type header and the JSON body with title, body, and userId fields."
+					},
+					"response": []
+				},
+				{
+					"name": "Update post",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 1,\n  \"title\": \"Updated Post Title\",\n  \"body\": \"This is the updated content. PUT requests are used to update existing resources.\",\n  \"userId\": 1\n}"
+						},
+						"url": "https://jsonplaceholder.typicode.com/posts/1",
+						"description": "Updates an existing post (post #1) by sending the complete updated data. PUT requests replace the entire resource with the new data you provide. Notice we include the ID in both the URL and the body."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete post",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "https://jsonplaceholder.typicode.com/posts/1",
+						"description": "Deletes a specific post (post #1). DELETE requests remove resources from the server. This is a destructive operation, though in this demo API, nothing is actually deleted permanently."
+					},
+					"response": []
+				}
+			],
+			"description": "This folder contains requests that modify data on the server - creating, updating, and deleting resources. These operations change the state of the API."
+		}
+	]
+}
